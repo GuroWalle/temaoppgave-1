@@ -1,47 +1,40 @@
-:root {
-	--mørk-grå: rgb(27, 24, 24);
-	--mild-grønn: #6da06f;
-	--mørk-grønn: #586c5b;
-	--orange: #f29e62dc;
-	--mørk-orange: #db8e57e5;
-}
-
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 22px;
 	color: var(--mørk-grå);
 }
 
-/* Header -> logo, løper, bli medlem*/
 
-header {
-	position: relative;
-	display: inline-block;
+/* Header */
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	width: 100%;
 	max-width: 1440px;
 	height: 30vh;
 	padding: 1vw;
-	text-align: center;
 }
 
-.logo {
+.header__text {
+	padding: 0.5em;
+	margin: 1em;
+	color: var(--mørk-grå);
+}
+
+.header__text:hover {
+	background-color: lightgray;
+	border-radius: 20px;
+}
+
+.header__logo {
 	position: relative;
 	width: 100%;
 	max-width: 10vw;
 	margin-bottom: 3vw;
 }
 
-.løper {
-	padding: 1vw;
-	margin: 1vw;
-	color: var(--mørk-grå);
-}
-
-.text:hover {
-	background-color: lightgray;
-}
-
-.bli-medlem {
+.header__membership {
 	position: relative;
 	z-index: 1;
 	padding: 1vw;
@@ -52,9 +45,17 @@ header {
 	color: var(--mørk-grå);
 }
 
-/* bilde av vedum + box */
+.header__membership:hover {
+	color: white;
+}
 
-.img-vedum {
+
+/* Welcome section */
+.welcome {
+	margin-bottom: 5em;
+}
+
+.welcome__image-vedum {
 	width: 100%;
 	max-width: 700px;
 	height: 100%;
@@ -63,7 +64,7 @@ header {
 	margin-right: 220px;
 }
 
-.nær-folk-box {
+.welcome__box {
 	position: absolute;
 	right: 180px;
 	top: 525px;
@@ -75,60 +76,64 @@ header {
 	background: var(--mild-grønn);
 }
 
-h1 {
+.welcome__box h1 {
 	font-size: 40px;
 	color: var(--mørk-grå);
+	margin-bottom: 1em;
 }
 
-.søk {
+.welcome__box input {
 	width: 25vw;
 	padding: 1vw;
 	border-radius: 10px;
 	margin-bottom: 3vw;
+	margin-top: 2vw;
+	border: none;
 }
 
-/* Midten -> hjertesaker */
 
-.hjertesaker {
+/* Passion causes */
+#passion-causes {
 	position: relative;
 	width: 100%;
 	max-width: 1440px;
+	margin-bottom: 5em;
 	background-color: var(--mild-grønn);
 }
 
-/* Inni hjertesaker box */
-h2 {
+#passion-causes h2 {
 	font-size: 45px;
 	font-family: "Pacifico", cursive;
 	color: var(--mørk-grå);
 	text-align: center;
 }
 
-.img-hjertesaker {
-	width: 100%;
-	max-width: 290px;
-	margin: 25px;
-}
-
-.hjertesaker div {
+#passion-causes div {
 	position: relative;
 	display: inline-block;
 	margin-left: 100px;
 }
 
-/* Midten --> aktuelt */
+#passion-causes img {
+	width: 100%;
+	max-width: 290px;
+	margin: 25px;
+	border: 8px solid var(--mild-grønn);
+}
 
-h3 {
+#passion-causes img:hover {
+	border: 8px solid var(--mørk-grønn);
+
+}
+
+/* Current matters */
+#current-matters {
 	margin-bottom: 2vw;
 	text-align: center;
 	font-size: 35px;
 }
 
-h4 {
-	font-size: 24px;
-}
-
-.grid {
+.grid__current-matters {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 
@@ -143,9 +148,14 @@ h4 {
 		"box4 box1 box1";
 }
 
-.g-item {
+.current-matter__item {
 	padding: 20px;
 	font-size: 24px;
+}
+
+.current-matter__item h4 {
+	font-size: 24px;
+	padding-bottom: 1em;
 }
 
 .box1 {
@@ -153,103 +163,95 @@ h4 {
 	background-color: var(--orange);
 	border: 7px solid var(--mørk-orange);
 }
+
 .box2 {
 	grid-area: box2;
 	background-color: var(--orange);
 	border: 7px solid var(--mørk-orange);
 }
+
 .box3 {
 	grid-area: box3;
 	background-color: var(--orange);
 	border: 7px solid var(--mørk-orange);
 }
+
 .box4 {
 	grid-area: box4;
 	background-color: var(--orange);
 	border: 7px solid var(--mørk-orange);
 }
+
 .box5 {
 	grid-area: box5;
 	background-color: var(--orange);
 	border: 7px solid var(--mørk-orange);
 }
 
-/* Bunnen -> Nyhetsbrev */
 
-.nyhetsbrev {
+/*  Newsletter */
+.newsletter {
 	display: flex;
 	flex-direction: row;
-	height: 28vh;
-	padding-top: 5vh;
-	padding-left: 5vw;
-	margin-left: 300px;
+	height: 35vh;
+	padding-top: 8vh;
+	margin-top: 5em;
 	background-color: var(--mild-grønn);
 	color: black;
 }
 
-h5 {
+.newsletter__title {
 	position: absolute;
-	width: 100%;
-	max-width: 300px;
-	height: 28vh;
-	padding: 2vw;
+	padding-left: 2vw;
 	font-size: 35px;
-	background-color: var(--mild-grønn);
 	color: var(--møtk-grå);
 	font-style: italic;
 }
 
-input {
-	position: relative;
-	display: inline-block;
-	padding: 5px;
-	margin-right: 35px;
+.newsletter__form {
+	padding-left: 17em;
 }
 
-.send-inn {
+.newsletter__form input {
+	padding: 1em;
+	border: none;
+	margin-right: 2vw;
+}
+
+.newsletter__form__submit {
 	width: 300px;
 	padding: 1.5vw;
 	margin-left: 325px;
-	margin-top: 7vh;
+	margin-top: 9vh;
 }
 
-/* Nederst -> Footer */
+.newsletter__form__submit:hover {
+	background-color: var(--orange);
+}
 
-footer {
-	display: grid;
+
+/* Footer */
+#contact {
+	display: flex;
+	flex-direction: row;
 	width: 100%;
 	max-width: 1440x;
-	height: 50vh;
+	height: 60vh;
 	padding: 4vw;
 	background-color: var(--mørk-grønn);
 	color: white;
 }
 
-h6 {
+.contact__flex__text-box {
+	margin: 2em;
+}
+
+.contact__flex__text-box h6 {
 	font-size: 20px;
 	margin-bottom: 1vw;
 }
 
-.container {
-	grid-template-areas: "box-1 box-2 box-3 box4 box5";
-}
-
-.grid-item {
-	width: 15vw;
-	height: 15vh;
-}
-
-footer img {
-	width: 100%;
-	max-width: 200px;
-	margin-left: 50px;
-}
-
-.til-toppen {
-	color: white;
-	font-weight: bolder;
-}
-
-.til-toppen:hover {
+.contact__flex__text-box p:hover {
 	color: var(--mørk-grå);
 }
+

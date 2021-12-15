@@ -1,70 +1,64 @@
-:root {
-	--mørk-grå: rgb(27, 24, 24);
-	--mild-grønn: #6da06f;
-	--mørk-grønn: #586c5b;
-	--orange: #f29e62dc;
-	--mørk-orange: #db8e57e5;
-}
-
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 22px;
 	color: var(--mørk-grå);
 }
 
-/* Header -> logo, løper,*/
 
-header {
-	position: relative;
-	display: inline-block;
+/* Header */
+.header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 100%;
 	max-width: 1440px;
 	height: 30vh;
 	padding: 1vw;
-	text-align: center;
 }
 
-.tilbake {
-	padding: 1vw;
-	margin: 1vw;
+.header__text {
+	padding: 0.5em;
+	margin: 1em;
 	color: var(--mørk-grå);
 }
 
-.text:hover {
+.header__text:hover {
 	background-color: lightgray;
+	border-radius: 20px;
 }
 
-.logo {
+.header__logo {
 	position: relative;
 	width: 100%;
 	max-width: 10vw;
 	margin-bottom: 3vw;
+	text-decoration: none;
 }
 
-.løper {
-	padding: 1vw;
-	margin: 1vw;
-	color: var(--mørk-grå);
-}
-
-.text {
-	margin: 200px;
-}
-
-.bli-medlem {
+.header__membership {
 	position: relative;
 	z-index: 1;
 	padding: 1vw;
 	margin: 0.5vw;
 	border: 3px solid var(--mørk-grønn);
 	border-radius: 10px;
-	color: var(--mørk-grå);
 	background-color: var(--mild-grønn);
+	color: var(--mørk-grå);
 }
 
-/* Midten -> kopp + tekst */
+.header__membership:hover {
+	color: white;
+}
 
-.img-kopp {
+
+/* About membership */
+.about-membership {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.about-membership__image {
 	width: 100%;
 	max-width: 750px;
 	height: 100%;
@@ -72,7 +66,7 @@ header {
 	margin-left: 125px;
 }
 
-.tekst-box {
+.about-membership__text {
 	position: absolute;
 	right: 40px;
 	top: 425px;
@@ -83,25 +77,9 @@ header {
 	border-radius: 10px;
 }
 
-/* Midten -> skjema */
 
-h3 {
-	padding: 0.5vw;
-	margin-bottom: 1.5vw;
-	color: var(--mørk-grå);
-	background-color: var(--mild-grønn);
-	text-align: center;
-}
-
-.velg-medlemskap {
-	margin: 1vw;
-}
-
-p {
-	font-size: 20px;
-}
-
-main {
+/* Membership form */
+.membership-form {
 	position: relative;
 	display: inline-block;
 	width: 1000px;
@@ -113,55 +91,70 @@ main {
 	text-align: center;
 }
 
-.send-inn {
-	width: 20vw;
-	padding: 2vw;
-	margin-left: 40vw;
+.membership-form__section {
+	padding: 1.5em;
+}
+
+.membership-form__section h3 {
+	padding: 0.5vw;
+	margin-bottom: 1.5vw;
+	color: var(--mørk-grå);
+	background-color: var(--mild-grønn);
 	text-align: center;
 }
 
-input {
+.membership-form__section input {
 	padding: 1vw;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	margin-right: 1.5vw;
 }
 
-/* Nederst -> Footer */
+.membership-form__section select {
+	padding: 0.7em;
+	}
 
-footer {
-	display: grid;
+.membership-form__section p {
+	font-size: 20px;
+	margin: 1vw;
+}
+
+.membership-form__submit {
+	width: 20vw;
+	padding: 2vw;
+	margin-top: 2em;
+	margin-left: 40vw;
+	margin-bottom: 6em;
+	text-align: center;
+}
+
+.membership-form__submit:hover {
+	background-color: var(--orange);
+
+}
+
+
+/* Footer */
+#contact {
+	display: flex;
+	flex-direction: row;
 	width: 100%;
 	max-width: 1440x;
-	height: 50vh;
+	height: 60vh;
 	padding: 4vw;
 	background-color: var(--mørk-grønn);
 	color: white;
 }
 
-h6 {
+.contact__flex__text-box {
+	margin: 2em;
+}
+
+.contact__flex__text-box h6 {
 	font-size: 20px;
 	margin-bottom: 1vw;
 }
 
-.container {
-	grid-template-areas: "box-1 box-2 box-3 box4 box5";
-}
-
-.grid-item {
-	width: 15vw;
-	height: 15vh;
-}
-
-footer img {
-	width: 100%;
-	max-width: 200px;
-	margin-left: 50px;
-}
-
-.til-toppen {
-	color: white;
-	font-weight: bolder;
-}
-
-.til-toppen:hover {
+.contact__flex__text-box p:hover {
 	color: var(--mørk-grå);
 }

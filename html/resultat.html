@@ -6,41 +6,37 @@
 		<title>Bli medlem av SP</title>
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/resultat.css" />
+		<link rel="stylesheet" href="../css/variables.css">
 	</head>
 
-	<body id="til-toppen">
-
-		<header>
+	<body>
+		<header class="header">
 			<nav>
-				<a class="tilbake text" href="../html/index.html">← Tilbake</a>
-				<img
-					class="logo løper"
-					src="../assets/img/sp-logo.png"
-					alt="Logoen til Senterpartiet. En fir-kløver med teksten - nær folk under."
-				/>
-				<a class="løper text" href="#kontakt-oss">Kontakt oss</a>
+				<a aria-label="Denne lenken tar deg til aktuelle saker for senterpartiet." class="header__text" href="#current-matters">Aktuelt</a>
+				<a aria-label="Denne lenken tar deg til senterpartiets politikk der du bor."class="header__text" href="">Der du bor</a>
+				<a aria-label="Denne lenken tar deg til senterpartiets hjertesaker." class="header__text" href="#passion-causes">Våre hjertesaker</a>
+				<a aria-label="Denne lenken tar deg tilbake til senterpartiets hjemmeside."class="header__logo" href="../html/index.html">
+					<img
+						class="header__logo"
+						src="../assets/img/sp-logo.png"
+						alt="Logoen til Senterpartiet. En fir-kløver med teksten - nær folk."
+					/>
+				</a>
+				<a aria-label="Denne lenken tar deg til senterpartiets politikere." class="header__text" href="">Våre politikere</a>
+				<a aria-label="Denne lenken tar deg til senterpartiets kontaktskjema." class="header__text" href="#contact">Kontakt oss</a>
+				<a aria-label="Denne knappen tar deg til senterpartiets medlemsskaps side." class="header__membership" href="../html/resultat.html">Bli medlem</a>
 			</nav>
 		</header>
 
-		<br>
-		<br>
-
-		<section class="img-tekst">
-		<img class="img-kopp" src="../assets/img/kopp.jpeg" 
-		alt="En kaffekopp med en tegning av Trygve Slagsvold Vedum som ler">
-		<aside class="tekst-box">
-			Som medlem i Senterpartiet får du <br> muligheten til å være med å utforme morgendagens politikk.</p>
-		</aside>
+		<section class="about-membership">
+			<img class="about-membership__image" src="../assets/img/kopp.jpeg" 
+				alt="En kaffekopp med en tegning av Trygve Slagsvold Vedum som ler">
+			<aside class="about-membership__text"> Som medlem i Senterpartiet får du <br> muligheten til å være med å utforme morgendagens politikk.</p>
+			</aside>
 		</section>	
 
-		<br>
-		<br>
-		
-
-		<main>
-		<form action="" method="POST">
-
-			<section class="navn">
+		<form class="membership-form" action="" method="POST">
+			<section class="membership-form__section">
 				<h3>Navn</h3>
 
 				<label for="fornavn">Fornavn</label>
@@ -50,12 +46,7 @@
 				<input type="text" name="etternavn" value="" />
 			</section>
 
-			<br>
-			<br>
-			<hr />
-			<br>
-
-			<section class="adresse">
+			<section class="membership-form__section">
 				<h3>Adresse</h3>
 				<input type="text" name="adresse" value="" placeholder="Gateadresse" />
 
@@ -67,7 +58,7 @@
 				/>
 
 				<input type="text" name="poststed" value="" placeholder="Poststed" />
-				<select name="land" id="land">
+				<select aria-label="Her kan du velge hvilket land du bor i."  name="land" id="land">
 					<option value="">Norge</option>
 					<option value="">Sverige</option>
 					<option value="">Danmark</option>
@@ -76,12 +67,7 @@
 				</select>
 			</section>
 
-			<br>
-			<br>
-			<hr />
-			<br>
-
-			<section class="Kontaktinformasjon">
+			<section class="membership-form__section">
 				<h3>Kontaktinformasjon</h3>
 				<label for="telefonnummer">Telefonnummer</label>
 				<input type="text" name="telefonnummer" value="" />
@@ -90,17 +76,12 @@
 				<input type="text" name="e-mail" value="" />
 			</section>
 
-			<br>
-			<br>
-			<hr />
-			<br>
-
-			<section class="om deg">
+			<section class="membership-form__section">
 				<h3>Om deg</h3>
 				<label for="kjønn">Kjønn</label>
-				<select name="kjønn" id="kjønn">
-					<option value="">Mann</option>
+				<select aria-label="Her kan du velge ditt kjønn." name="kjønn" id="kjønn">
 					<option value="">Kvinne</option>
+					<option value="">Mann</option>
 					<option value="">Annet</option>
 					<option value="">Jeg vil ikke oppgi kjønn</option>
 				</select>
@@ -109,27 +90,20 @@
 				<input type="date" name="fødselsdato" value="" />
 			</section>
 
-			<br>
-			<br>
-			<hr>
-			<br>
-
-			<section class="kontigent">
+			<section class="membership-form__section">
 				<h3>Årlig kontigent</h3>
-				<p class="velg-medlemskap">- Velg medlemskap -</p>
+				<p>- Velg medlemskap -</p>
+
 				<input type="radio" name="hel" value="">
 				<label for="hel">Hel kontigent - 300 kr / år</label>
-<br>
+
+				<br>
+
 				<input type="radio" name="halv" value="">
 				<label for="halv">Halv kontigent - 150 kr /år</label>
 			</section>
 
-			<br>
-			<br>
-			<hr />
-			<br>
-
-			<section>
+			<section class="membership-form__section">
 				<h3>Bekreft kjøp</h3>
 				<label for="eier">Eier</label>
 				<input type="text" name="eier" value="">
@@ -137,73 +111,52 @@
 				<label for="cvv">CVV</label>
 				<input type="text" name="cvv" value="">
 
-				<br>
-				<br>
-
 				<label for="kortnummer">Kortnummer</label>
 				<input type="text" name="kortnummer" value="">
 
 				<label for="utløpsdato">Utløpsdato</label>
 				<input type="date" name="utløpsdato" value="">
 			</section>
-			<br>
-			<br>
 		</form>
 
-		</main>
-
-		<form class="submit" action="" method="POST">
-			<input class="send-inn" type="submit" />
+		<form action="" method="POST">
+			<input aria-label="Send inn" class="membership-form__submit" type="submit" />
 		</form>
 
-		<br>
-		<br>
-		<br>
+		<footer id="contact">
+			<nav class="contact__flex__text-box">
+				<h6> Kontakt oss </h6>
+				<p> Akersgata 51, 0180, OSLO </p>
+				<p> (+47) 23 69 01 00 </p>
+				<p> post@sp-no </p>
+			</nav>
 
-		<footer id="kontakt-oss" class="container">
-			<article class="grid-item box-1">
-				<h6>Kontakt oss</h6>
-				<p>
-					Akersgata 51, 0180, OSLO <br />
-					(+47) 23 69 01 00 <br />
-					post@sp-no
-				</p>
-			</article>
+			<nav class="contact__flex__text-box">
+				<h6> Medlemssider </h6>
+				<p> Inlogging for nettsideadministrasjon </p>
+				<p> Innlogging nettsiden </p>
+				<p> Innlogging Min Side </p>
+				<p> Innlogging Min Side </p>
+				<p> Senterpartiets nettbutikk </p>
+				<p> Profilportalen </p>
+			</nav>
 
-			<article class="grid-item box-4">
-				<h6>Medlemssider</h6>
-				<p>
-					Inlogging for nettsideadministrasjon <br />
-					Innlogging nettsiden <br />
-					Innlogging Min Side <br />
-					Senterpartiets nettbutikk <br />
-					Profilportalen
-				</p>
-			</article>
+			<nav class="contact__flex__text-box">
+				<h6> Senterbevegelsen </h6>
+				<p> Senterkvinner </p>
+				<p> Senterpartiet </p>
+				<p> Senterpartiskolen </p>
+				<p> Senterungdommen </p>
+			</nav>
 
-			<article class="grid-item box-3">
-				<h6>Senterbevegelsen</h6>
-				<p>
-					Senterkvinner <br />
-					Senterpartiet <br />
-					Senterpartiskolen <br />
-					Senterungdommen
-				</p>
-			</article>
-			<article class="grid-item box-2">
-				<h6>Sosiale medier</h6>
-				<p>
-					Facebook <br />
-					Instagram <br />
-					Twitter <br />
-					Flicker <br />
-					YouTube
-				</p>
-			</article>
-
-			<div class="til-toppen-box box-5">
-				<a class="til-toppen" href="#til-toppen">↑ Til toppen</a>
-			</div>
+			<nav class="contact__flex__text-box">
+				<h6> Sosialemedier </h6>
+				<p> Facebook </p>
+				<p> Instagram </p>
+				<p> Twitter </p>
+				<p> Flicker </p>
+				<p> YouTube </p>
+			</nav>
 		</footer>
 	</body>
 </html>
